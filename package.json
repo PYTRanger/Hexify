@@ -1,32 +1,35 @@
 {
-  "name": "da3mons",
+  "name": "electron-chatbot",
+  "productName": "WonkiBot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chatbot build with NodeJS and DialogFlow running into electron",
   "main": "index.js",
   "scripts": {
-    "start" : "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-chatbot --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"WonkiBot\"",
+    "package-linux": "electron-packager . electron-chatbot --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megabass00/electron-chatbot.git"
+  },
+  "keywords": [
+    "electron",
+    "chatbot",
+    "nodejs"
+  ],
+  "author": "megabass00",
   "license": "ISC",
-  "devDependencies": {
-    "electron": "^29.1.4"
+  "bugs": {
+    "url": "https://github.com/megabass00/electron-chatbot/issues"
   },
+  "homepage": "https://github.com/megabass00/electron-chatbot#readme",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "wait-on": "^7.2.0"
+    "apiai": "^4.0.3",
+    "electron-packager": "^13.0.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "electron": "^4.2.12"
   }
 }
