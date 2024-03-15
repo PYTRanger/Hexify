@@ -47,10 +47,8 @@ const mainMenuTemplate = [
         label: 'Options',
         submenu: [
             {
-                label: 'Created by megabass00',
-                click() {
-                    require('electron').shell.openExternal('https://github.com/megabass00/electron-chatbot');
-                }
+                label: 'Created by da3m0ns',
+                
             },
             {
                 label: 'Show Dev Tools',
