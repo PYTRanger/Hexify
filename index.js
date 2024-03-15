@@ -1,28 +1,24 @@
 console.log('Initializing electron app...');
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, Tray } = require('electron');
 const url = require('url');
 const path = require('path');
 
 let mainWindow;
+let appTray;
+
 app.on('ready', createMainWindow);
- 
 
 app.on('window-all-closed', function () {
-    // On macOS it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') {
-      app.quit()
+        app.quit()
     }
-})
+});
 
 app.on('activate', function () {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
         createMainWindow()
     }
-})
-
+});
 
 function createMainWindow() {
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
@@ -37,10 +33,24 @@ function createMainWindow() {
 
     mainWindow.on('closed', () => {
         console.log('Closing app...');
-        mainWindow = null
+        mainWindow = null;
+    });
+
+    mainWindow.on('minimize', function (event) {
+        event.preventDefault();
+        mainWindow.hide();
+    });
+
+    mainWindow.on('show', function () {
+        appTray.setHighlightMode('always');
+    });
+
+    appTray = new Tray(path.join(__dirname, 'assets/icons/png/1024x1024.png'));
+    appTray.setToolTip('Your App Name');
+    appTray.on('click', () => {
+        mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
     });
 }
-
 
 const mainMenuTemplate = [
     {
@@ -48,7 +58,6 @@ const mainMenuTemplate = [
         submenu: [
             {
                 label: 'Created by da3m0ns',
-                
             },
             {
                 label: 'Show Dev Tools',
@@ -66,9 +75,10 @@ const mainMenuTemplate = [
             }
         ]
     }
-]
+];
+
 if (process.platform === 'darwin') {
     mainMenuTemplate.unshift({
         label: app.getName()
-    })
+    });
 }
