@@ -45,8 +45,8 @@ function createMainWindow() {
         appTray.setHighlightMode('always');
     });
 
-    appTray = new Tray(path.join(__dirname, 'assets/icons/png/1024x1024.png'));
-    appTray.setToolTip('Your App Name');
+    appTray = new Tray(path.join(__dirname, 'assets/icons/png/smol_logo.jpeg'));
+    appTray.setToolTip('Hex');
     appTray.on('click', () => {
         mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
     });
