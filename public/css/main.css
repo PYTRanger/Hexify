@@ -9,12 +9,14 @@ body {
     height: 100vh;
 }
 .app-container {
+    background-color: #27374D;
     width: 100%;
     height: 100%;
     color: #2d7dff;
 }
 
 #conversation {
+    background-color: #DDE6ED;
     border: 1px solid #ccc;
     border-radius: 7px;
     padding: 10px;
@@ -23,7 +25,10 @@ body {
     overflow-y: scroll;
 }
 .card-body small {
-    color: #999;    
+    color: #526D82;    
+}
+.card-body  {
+    background-color: #526D82;    
 }
 
 .star{
@@ -79,12 +84,31 @@ button {
 .card-footer a:hover {
     color: #1f555d;
 }
+.card-footer{
+    background-color: #526D82;
+}
+
+.card-footer-1{
+    background-color: #27374D;
+}
+
+.input-group{
+    background-color: #526D82;
+}
+
 #cardOne{
     background-image:url("blue.jpg");
     background-size: cover;
     background-position: center;
 }
+
 .hex{
     height: 50px;
-    width:75px;
+    width:50px;
+}
+.btn-reminder{
+    color: white;
+    background-color: #27374D;
+    border-radius: 15%;
+    
 }
