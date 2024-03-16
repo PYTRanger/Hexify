@@ -97,25 +97,12 @@ function runExternalProcess() {
       console.error('Error launching application:', err);
     });
   }
-
-
-
-<<<<<<< refs/remotes/origin/yogitaa
-<<<<<<< refs/remotes/origin/yogitaa
-// Exporting functions for testing purposes
-=======
-=======
->>>>>>> local
 // Handle reminder creation
 ipcMain.on('createReminder', (event, reminder) => {
     console.log('Reminder created:', reminder);
     // Here you can implement the logic to save the reminder
   });
   
-<<<<<<< refs/remotes/origin/yogitaa
->>>>>>> local
-=======
->>>>>>> local
 module.exports = {
     createMainWindow,
     runExternalProcess
