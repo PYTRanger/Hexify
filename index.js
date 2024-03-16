@@ -1,7 +1,8 @@
 console.log('Initializing electron app...');
-const { app, BrowserWindow, Menu, Tray } = require('electron');
+const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
+const { spawn } = require('child_process');
 
 let mainWindow;
 let appTray;
@@ -10,13 +11,13 @@ app.on('ready', createMainWindow);
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
 });
 
 app.on('activate', function () {
     if (mainWindow === null) {
-        createMainWindow()
+        createMainWindow();
     }
 });
 
@@ -52,6 +53,7 @@ function createMainWindow() {
     });
 }
 
+// Main menu template
 const mainMenuTemplate = [
     {
         label: 'Options',
@@ -77,8 +79,27 @@ const mainMenuTemplate = [
     }
 ];
 
+// If macOS, add first menu item
 if (process.platform === 'darwin') {
     mainMenuTemplate.unshift({
         label: app.getName()
     });
 }
+
+// IPC communication to handle launching external app
+ipcMain.on('launch-app', () => {
+    runExternalProcess();
+});
+
+function runExternalProcess() {
+    const child = spawn('notepad.exe');
+    child.on('error', (err) => {
+      console.error('Error launching application:', err);
+    });
+  }
+
+// Exporting functions for testing purposes
+module.exports = {
+    createMainWindow,
+    runExternalProcess
+};
