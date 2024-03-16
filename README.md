@@ -1,4 +1,4 @@
-  # **HExIfY**
+  # **HEXIFY**
   ![c30b97be-c061-479e-af81-eaa5fdd53476](https://github.com/AnikethDeb2004/HexiFy/assets/137791848/53183a28-8661-4777-b5cb-df4918e7a588)
 
 
@@ -8,6 +8,8 @@
 ● This solution addresses challenges faced by
 developers, such as task management, code
 navigation, reminders, and much more.
+
+
 ● By integrating voice generation, it aims to
 streamline workflows, enhancing overall
 productivity and creating a more engaging
