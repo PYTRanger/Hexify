@@ -98,6 +98,8 @@ function runExternalProcess() {
     });
   }
 
+
+
 // Exporting functions for testing purposes
 module.exports = {
     createMainWindow,
