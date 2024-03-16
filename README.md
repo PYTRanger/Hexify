@@ -67,6 +67,18 @@ more intuitive experience._
 
 
 
+  # 🛠 Installation Steps:
+
+
+    ➡️cd HexiFy
+
+    ➡️npm i
+
+    ➡️npm run start
+  
+
+
+
    # 💻BUILT WITH
 
 
