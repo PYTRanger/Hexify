@@ -28,6 +28,8 @@
   "dependencies": {
     "@google/generative-ai": "^0.3.0",
     "apiai": "^4.0.3",
+    "electron-packager": "^13.0.1",
+    "flatpickr": "^4.6.13"
     "dotenv": "^16.4.5",
     "electron-packager": "^13.0.1"
   },
