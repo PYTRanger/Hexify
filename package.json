@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/megabass00/electron-chatbot#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.3.0",
     "apiai": "^4.0.3",
     "electron-packager": "^13.0.1"
   },

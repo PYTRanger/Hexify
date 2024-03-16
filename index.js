@@ -1,5 +1,5 @@
-console.log('Initializing electron app...');
-const { app, BrowserWindow, Menu, Tray } = require('electron');
+const { spawn } = require('child_process');
+const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 
@@ -10,13 +10,13 @@ app.on('ready', createMainWindow);
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
 });
 
 app.on('activate', function () {
     if (mainWindow === null) {
-        createMainWindow()
+        createMainWindow();
     }
 });
 
@@ -52,6 +52,7 @@ function createMainWindow() {
     });
 }
 
+// Main menu template
 const mainMenuTemplate = [
     {
         label: 'Options',
@@ -77,8 +78,37 @@ const mainMenuTemplate = [
     }
 ];
 
+// If macOS, add first menu item
 if (process.platform === 'darwin') {
     mainMenuTemplate.unshift({
         label: app.getName()
     });
 }
+
+// IPC communication to handle launching external apps
+ipcMain.on('launch-app', (event, appName) => {
+    if (appName === 'notepad') {
+        runExternalProcess('notepad.exe');
+    } else if (appName === 'vscode') {
+        runExternalProcess('code');
+    }
+});
+
+function runExternalProcess(command) {
+    const child = spawn(command, [], { windowsHide: false });
+
+    child.on('error', (err) => {
+        console.error(`Error launching ${command}: ${err}`);
+    });
+
+    child.on('exit', (code) => {
+        if (code !== 0) {
+            console.error(`${command} process exited with code ${code}`);
+        }
+    });
+}
+
+module.exports = {
+    createMainWindow,
+    runExternalProcess
+};

@@ -87,20 +87,24 @@ button {
 .container.card-footer {
     background-color: #526D82;
     display: flex;
-    justify-content: center; /* evenly space the buttons */
-    align-items: center; /* center content vertically */
+    justify-content: center; 
+    align-items: center; 
     margin-left: 5px;
     width: auto;
-    white-space: nowrap; /* keep the text in a single line */
+    white-space: nowrap; 
 }
 
-
+.launch-container{
+    background-color: #526D82;
+    
+}
 
 
 
 .btn-reminder{
     margin-left: 1rem;
 }
+
 
 
 
@@ -126,8 +130,15 @@ button {
     color: white;
     background-color: #27374D;
     border-radius: 15%;
-    
 }
+
+.btn-launchapps{
+     color: white;
+     background-color: #27374D;
+     width:100%;
+     height: 100px;
+}
+
 .card-body{
     color: white;
 }
