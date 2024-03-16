@@ -22,3 +22,17 @@ launchVsCodeBtn.addEventListener('click', () => {
         console.log(`VS Code launched successfully`);
     });
 });
+
+document.getElementById("btn-send").addEventListener("click", async () => {
+    const prompt = document.getElementById("write-message").value;
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+  
+    const conversationDiv = document.getElementById("conversation");
+    conversationDiv.innerHTML += `<p><strong>User:</strong> ${prompt}</p>`;
+    conversationDiv.innerHTML += `<p style="color: red;"><strong>HEX:</strong> ${text}</p>`;
+  
+    document.getElementById("write-message").value = "";
+  });
