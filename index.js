@@ -100,12 +100,6 @@ function runExternalProcess(command) {
     child.on('error', (err) => {
         console.error(`Error launching ${command}: ${err}`);
     });
-  }
-// Handle reminder creation
-ipcMain.on('createReminder', (event, reminder) => {
-    console.log('Reminder created:', reminder);
-    // Here you can implement the logic to save the reminder
-  });
 
     child.on('exit', (code) => {
         if (code !== 0) {
@@ -113,6 +107,7 @@ ipcMain.on('createReminder', (event, reminder) => {
         }
     });
 }
+
 module.exports = {
     createMainWindow,
     runExternalProcess
