@@ -1,8 +1,7 @@
-console.log('Initializing electron app...');
+const { spawn } = require('child_process');
 const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
-const { spawn } = require('child_process');
 
 let mainWindow;
 let appTray;
@@ -86,21 +85,29 @@ if (process.platform === 'darwin') {
     });
 }
 
-// IPC communication to handle launching external app
-ipcMain.on('launch-app', () => {
-    runExternalProcess();
+// IPC communication to handle launching external apps
+ipcMain.on('launch-app', (event, appName) => {
+    if (appName === 'notepad') {
+        runExternalProcess('notepad.exe');
+    } else if (appName === 'vscode') {
+        runExternalProcess('code');
+    }
 });
 
-function runExternalProcess() {
-    const child = spawn('notepad.exe');
+function runExternalProcess(command) {
+    const child = spawn(command, [], { windowsHide: false });
+
     child.on('error', (err) => {
-      console.error('Error launching application:', err);
+        console.error(`Error launching ${command}: ${err}`);
     });
-  }
 
+    child.on('exit', (code) => {
+        if (code !== 0) {
+            console.error(`${command} process exited with code ${code}`);
+        }
+    });
+}
 
-
-// Exporting functions for testing purposes
 module.exports = {
     createMainWindow,
     runExternalProcess
