@@ -21,47 +21,47 @@ development experience.
 
  ## **1. Find**
 
- Hex can redirect you to resources as and when
-needed. All you have to do is ask!
+ _Hex can redirect you to resources as and when
+needed. All you have to do is ask!._
 
  ## **2.  Terminal Emulation**
 
-Executes terminal commands as per the user’s
+_Executes terminal commands as per the user’s
 natural language input to make emulation an
-effortless process.
+effortless process._
 
 
 
  ## **3. Remind**
 
 
-Generates reminders set by the user so you can
+_Generates reminders set by the user so you can
 rest assured that you wont miss any of those
-important deadlines!
+important deadlines!._
 
 
  ## **4.Launch Apps**
 
 
-Opening apps has never been easier. Just tell hex
+_Opening apps has never been easier. Just tell hex
 the apps you need and it’ll open them for you in
-a jiffy!
+a jiffy!._
 
 
  ## **5. CP Tracker**
 
 
-Track your consistency on famous websites like
+_Track your consistency on famous websites like
 Codechef, Codeforces etc. and get insights about
-your performance across these platforms.
+your performance across these platforms._
 
 
  ## **6. Chatbot**
 
 
-Hexify is all about the user experience. A
+_Hexify is all about the user experience. A
 friendly chat-bot interface makes using the app a
-more intuitive experience.
+more intuitive experience._
 
 
 
