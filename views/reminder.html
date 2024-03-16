@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<<<<<<< refs/remotes/origin/yogitaa
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reminder</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="../public/css/main.css">
+=======
+  <title>Reminder App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+>>>>>>> local
 </head>
 <<<<<<< refs/remotes/origin/yogitaa
 <body>
+<<<<<<< refs/remotes/origin/yogitaa
   <!-- Button to trigger the launch of Notepad -->
   <button id="btn-launch" class="btn-reminder px-3 py-2">Launch Notepad</button>
 =======
@@ -38,6 +44,56 @@
         reminderInput.value = '';
       }
     });
+=======
+  <h1>Reminder App</h1>
+  <input type="text" id="reminderInput" placeholder="Enter your reminder...">
+  <input type="text" id="dateInput" placeholder="Choose date and time...">
+  <button onclick="setReminder()">Set Reminder</button>
+  <div id="reminderList"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr('#dateInput', {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+    });
+
+    function setReminder() {
+      const reminderInput = document.getElementById('reminderInput').value;
+      const dateInput = document.getElementById('dateInput').value;
+      const reminderList = document.getElementById('reminderList');
+
+      // Parse dateInput into Date object
+      const reminderDate = new Date(dateInput);
+
+      // Get the current time
+      const currentTime = new Date();
+
+      // Calculate the time difference between reminderDate and currentTime
+      const timeDiff = reminderDate - currentTime;
+
+      if (timeDiff <= 0) {
+        alert("Please select a future date and time for your reminder.");
+        return;
+      }
+
+      // Create a new paragraph element to display the reminder and date
+      const reminderElement = document.createElement('p');
+      reminderElement.textContent = `${reminderInput} - ${dateInput}`;
+
+      // Append the new reminder element to the reminder list
+      reminderList.appendChild(reminderElement);
+
+      // Set a timeout to trigger the alarm when the time is up
+      setTimeout(function() {
+        alert(`Time's up! Reminder: ${reminderInput}`);
+      }, timeDiff);
+
+      // Clear the input fields after setting the reminder
+      document.getElementById('reminderInput').value = "";
+      document.getElementById('dateInput').value = "";
+    }
+>>>>>>> local
   </script>
 </body>
 </html>

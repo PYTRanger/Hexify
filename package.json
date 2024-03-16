@@ -27,7 +27,8 @@
   "homepage": "https://github.com/megabass00/electron-chatbot#readme",
   "dependencies": {
     "apiai": "^4.0.3",
-    "electron-packager": "^13.0.1"
+    "electron-packager": "^13.0.1",
+    "flatpickr": "^4.6.13"
   },
   "devDependencies": {
     "electron": "^4.2.12"
