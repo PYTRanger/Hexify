@@ -4,11 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reminder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/css/main.css">
 </head>
+<<<<<<< refs/remotes/origin/yogitaa
 <body>
   <!-- Button to trigger the launch of Notepad -->
   <button id="btn-launch" class="btn-reminder px-3 py-2">Launch Notepad</button>
+=======
+<body class="reminder-container">
+  <h1>Create Reminder</h1>
+  <form id="reminderForm">
+    <label for="reminder">Reminder:</label>
+    <input type="text" id="reminder" name="reminder"><br><br>
+    <button type="submit">Create Reminder</button>
+  </form>
+>>>>>>> local
 
-  <script src="../public/js/renderer.js"></script>
+  <!-- Script to handle form submission and send reminder to main process -->
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    const reminderForm = document.getElementById('reminderForm');
+
+    reminderForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const reminderInput = document.getElementById('reminder');
+      const reminderText = reminderInput.value.trim();
+
+      if (reminderText) {
+        ipcRenderer.send('createReminder', reminderText);
+        reminderInput.value = '';
+      }
+    });
+  </script>
 </body>
 </html>

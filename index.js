@@ -100,7 +100,16 @@ function runExternalProcess() {
 
 
 
+<<<<<<< refs/remotes/origin/yogitaa
 // Exporting functions for testing purposes
+=======
+// Handle reminder creation
+ipcMain.on('createReminder', (event, reminder) => {
+    console.log('Reminder created:', reminder);
+    // Here you can implement the logic to save the reminder
+  });
+  
+>>>>>>> local
 module.exports = {
     createMainWindow,
     runExternalProcess
