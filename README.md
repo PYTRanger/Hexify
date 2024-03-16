@@ -19,12 +19,12 @@ development experience.
 
 ## Core Features of HEXIFY
 
-**1. Find**
+ ## **1. Find**
 
  Hex can redirect you to resources as and when
 needed. All you have to do is ask!
 
-**2.  Terminal Emulation**
+ ## **2.  Terminal Emulation**
 
 Executes terminal commands as per the user’s
 natural language input to make emulation an
@@ -32,7 +32,7 @@ effortless process.
 
 
 
-**3. Remind**
+ ## **3. Remind**
 
 
 Generates reminders set by the user so you can
@@ -40,7 +40,7 @@ rest assured that you wont miss any of those
 important deadlines!
 
 
-**4.Launch Apps**
+ ## **4.Launch Apps**
 
 
 Opening apps has never been easier. Just tell hex
@@ -48,7 +48,7 @@ the apps you need and it’ll open them for you in
 a jiffy!
 
 
-**5. CP Tracker**
+ ## **5. CP Tracker**
 
 
 Track your consistency on famous websites like
@@ -56,7 +56,7 @@ Codechef, Codeforces etc. and get insights about
 your performance across these platforms.
 
 
-**6. Chatbot**
+ ## **6. Chatbot**
 
 
 Hexify is all about the user experience. A
