@@ -16,7 +16,7 @@ body {
 }
 
 #conversation {
-    background-color: #DDE6ED;
+    background-color: #27374D;
     border: 1px solid #ccc;
     border-radius: 7px;
     padding: 10px;
@@ -132,6 +132,14 @@ button {
     border-radius: 15%;
 }
 
+.btn-reminder1{
+    color: white;
+    background-color: #27374D;
+    height: 50px;
+    width:120px;
+    margin-left: 44%;
+}
+
 .btn-launchapps{
      color: white;
      background-color: #27374D;
@@ -142,3 +150,47 @@ button {
 .card-body{
     color: white;
 }
+
+.reminder-body{
+    background-color: #526D82;
+
+}
+
+.place{
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.place1{
+    height: 50px;
+    width:250px;
+    margin-left:35%;
+}
+
+.reminder-header{
+    color: white;
+    margin-left: 41%;
+    margin-bottom: 5%;
+}
+
+
+.btn-back{
+    height:50px ;
+    width:75px;
+   
+}
+
+.btn-back-2{
+    height:50px ;
+    width:75px;
+    position: absolute;
+    bottom:0;
+}
+
+.card-footer-2 {
+    position: absolute;
+    background-color: #27374D;
+    color:#bbb;
+    bottom: 0;
+    width: 100%; /* Ensure it spans the entire width of its container */
+  }

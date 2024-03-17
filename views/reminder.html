@@ -1,17 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reminder</title>
+  <title>HexiFy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/css/main.css">
+  <style>
+    /* Add CSS for the framed box */
+    .reminder-box {
+      border: 1px solid white;
+      background-color: #27374D;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 20px; 
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    .reminder-heading {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 10px;
+     
+    }
+  </style>
 </head>
-<body>
-  <!-- Button to trigger the launch of Notepad -->
-  <button id="btn-launch" class="btn-reminder px-3 py-2">Reminder</button>
-  <div>
-    <button class="btn-back btn-back-dangers" id="btn-back" class="btn-reminder px-3 py-2" onclick="window.location.href='index.html'">BACK<i class="fas"></i></button>
+<body class="reminder-body">
+  <h1 class="reminder-header">Reminder</h1>
+  <div class="place">
+    <input type="text" id="reminderInput" class="place1" placeholder="Enter your reminder...">
+  </div>
+  <div class="place">
+    <input type="text" id="dateInput"  class="place1" placeholder="Choose date and time...">
+  </div>
+  <div class="place">
+    <button class="btn-reminder1" onclick="setReminder()">Set Reminder</button>
+  </div>
+  <!-- Framed box to contain reminder tasks -->
+  <div class="reminder-box" id="reminderList">
+    <h2 class="reminder-heading">Tasks</h2>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr('#dateInput', {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+    });
+
+    function setReminder() {
+      const reminderInput = document.getElementById('reminderInput').value;
+      const dateInput = document.getElementById('dateInput').value;
+      const reminderList = document.getElementById('reminderList');
+
+      // Parse dateInput into Date object
+      const reminderDate = new Date(dateInput);
+
+      // Get the current time
+      const currentTime = new Date();
+
+      // Calculate the time difference between reminderDate and currentTime
+      const timeDiff = reminderDate - currentTime;
+
+      if (timeDiff <= 0) {
+        alert("Please select a future date and time for your reminder.");
+        return;
+      }
+       
+      // Create a new paragraph element to display the reminder and date
+      const reminderElement = document.createElement('p');
+      reminderElement.textContent = `Task: ${reminderInput} - Deadline: ${dateInput}`;
+      reminderElement.style.color = 'white';
+      reminderElement.style.fontSize = '16px';
+
+      // Append the new reminder element to the reminder list
+      reminderList.appendChild(reminderElement);
+
+      // Set a timeout to trigger the alarm when the time is up
+      setTimeout(function() {
+        alert(`Time's up! Reminder: ${reminderInput}`);
+      }, timeDiff);
+
+      // Clear the input fields after setting the reminder
+      document.getElementById('reminderInput').value = "";
+      document.getElementById('dateInput').value = "";
+    }
+  </script>
+
+  <div>
+    <button class="btn-back-2 btn-back-danger" id="btn-back" class="btn-reminder px-3 py-2" onclick="window.location.href='index.html'">BACK<i class="fas"></i></button>
+  </div>
+
+  <div class="card-footer-2 text-muted d-flex text-center justify-content-center align-items-center">
+    <small>
+      2024 da3m0ns
+    </small>
+  </div>
   <script src="../public/js/renderer.js"></script>
 </body>
 </html>
