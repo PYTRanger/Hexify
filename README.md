@@ -4,6 +4,14 @@
   ![c30b97be-c061-479e-af81-eaa5fdd53476](https://github.com/AnikethDeb2004/HexiFy/assets/137791848/53183a28-8661-4777-b5cb-df4918e7a588)
 
 
+**This project was built by Team da3m0ns as a part of DevsHouse '24, a hackathon that took place in VIT Chennai.
+Team Members: 
+Utkarsh Jaiswal (Team Lead)
+Aniketh Deb
+Yogita Jha
+Anushka Priyadarshi
+
+
   **What problem it is solving?**
 
 
