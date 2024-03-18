@@ -31,7 +31,7 @@ needed. All you have to do is ask!._
  ## **2.  Terminal Emulation**
 
 _Executes terminal commands as per the user’s
-natural language input to make emulation an
+natural language input to make a emulation an
 effortless process._
 
 
