@@ -87,13 +87,13 @@ more intuitive experience._
    **Technologies used in this project**
 
 
-   ➡️Electron Js
+     ➡️Electron Js
 
 
    
-   ➡️Gemini Ai Api
+     ➡️Gemini Ai Api
 
 
    
-   ➡️Node Js
+     ➡️Node Js
    
