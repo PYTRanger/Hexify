@@ -4,6 +4,7 @@
   ![c30b97be-c061-479e-af81-eaa5fdd53476](https://github.com/AnikethDeb2004/HexiFy/assets/137791848/53183a28-8661-4777-b5cb-df4918e7a588)
 
 
+ 
   **What problem it is solving?**
 
 
@@ -25,47 +26,47 @@ development experience.
 
  ## **1. Find**
 
- _Hex can redirect you to resources as and when
-needed. All you have to do is ask!._
+   _Hex can redirect you to resources as and when
+  needed. All you have to do is ask!._
 
  ## **2.  Terminal Emulation**
 
-_Executes terminal commands as per the user’s
-natural language input to make a emulation an
-effortless process._
+  _Executes terminal commands as per the user’s
+  natural language input to make a emulation an
+  effortless process._
 
 
 
  ## **3. Remind**
 
 
-_Generates reminders set by the user so you can
-rest assured that you wont miss any of those
-important deadlines!._
+  _Generates reminders set by the user so you can
+  rest assured that you wont miss any of those
+  important deadlines!._
 
 
  ## **4.Launch Apps**
 
 
-_Opening apps has never been easier. Just tell hex
-the apps you need and it’ll open them for you in
-a jiffy!._
+  _Opening apps has never been easier. Just tell hex
+  the apps you need and it’ll open them for you in
+  a jiffy!._
 
 
  ## **5. CP Tracker**
 
 
-_Track your consistency on famous websites like
-Codechef, Codeforces etc. and get insights about
-your performance across these platforms._
+  _Track your consistency on famous websites like
+  Codechef, Codeforces etc. and get insights about
+  your performance across these platforms._
 
 
  ## **6. Chatbot**
 
 
-_Hexify is all about the user experience. A
-friendly chat-bot interface makes using the app a
-more intuitive experience._
+  _Hexify is all about the user experience. A
+  friendly chat-bot interface makes using the app a
+  more intuitive experience._
 
 
 
